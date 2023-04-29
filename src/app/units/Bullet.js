@@ -2,12 +2,16 @@ import {Unit} from "./Unit.js";
 
 export class Bullet extends Unit {
 
-    update(view) {
+    update() {
         this.y -= this.speed
+
+        // if (this.y <= -this.h || this.y >= view.height ){
+        //     return true
+        // }
+    }
+
+    render(view){
         view.rect(this.x, this.y, this.w, this.h, this.clr)
-        if (this.y <= -this.h || this.y >= view.height ){
-            return true
-        }
     }
 
     shot(x, y, speed){

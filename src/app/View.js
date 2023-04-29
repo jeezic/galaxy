@@ -32,13 +32,13 @@ export class View {
         this.context.clearRect(0, 0, this.width, this.height);
 
         for (let i = scene.enemies.length - 1; i >= 0; i--) {
-            scene.enemies[i].update(this);
+            scene.enemies[i].render(this);
         }
         for (let i = scene.bullets.length - 1; i >= 0; i--) {
-            scene.bullets[i].update(this);
+            scene.bullets[i].render(this);
         }
 
-        scene.player1.update(this)
+        scene.player1.render(this)
 
         this.text((this.width/2-this.width/10),5,'#7aef63', 'Игровой счет:'+scene.score)
 

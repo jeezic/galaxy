@@ -70,6 +70,15 @@ export class Scene {
             }
         }
 
+        for (let i = this.enemies.length - 1; i >= 0; i--) {
+            this.enemies[i].update();
+        }
+        for (let i = this.bullets.length - 1; i >= 0; i--) {
+            this.bullets[i].update();
+        }
+
+        this.player1.update()
+
         this.collisionDetection()
 
     }

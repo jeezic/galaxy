@@ -8,7 +8,7 @@ export class Unit {
         this.clr = clr;
     }
 
-    update(view) {
+    update() {
 
     }
 
@@ -19,6 +19,9 @@ export class Unit {
 
     intersect(unit) {
         return !(this.x + this.w < unit.x || this.y + this.h < unit.y || unit.x + unit.w < this.x || unit.y + unit.h < this.y);
+    }
+
+    render(view) {
 
     }
 

@@ -16,7 +16,7 @@ export class Enemy extends Unit {
         this.bottomEdge = this.y + 200
     }
 
-    update(view) {
+    update() {
 
         if (this.x <= this.leftEdge) {
             this.speedX = -this.speedX;
@@ -41,7 +41,9 @@ export class Enemy extends Unit {
         this.x += this.speedX
         this.y += this.speedY
 
+    }
 
+    render(view){
         view.rect(this.x, this.y, this.w, this.h, this.clr)
     }
 
