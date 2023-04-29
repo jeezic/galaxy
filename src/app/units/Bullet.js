@@ -16,8 +16,4 @@ export default class Bullet extends Unit {
         this.speed = speed
     }
 
-    intersect(Drawable) {
-        return !(this.x + this.w < Drawable.x || this.y + this.h < Drawable.y || Drawable.x + Drawable.w < this.x || Drawable.y + Drawable.h < this.y);
-    }
-
 }
