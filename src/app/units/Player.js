@@ -1,6 +1,6 @@
 import {Unit} from "./Unit.js";
 
-export default class Player extends Unit{
+export class Player extends Unit{
 
     speed = 2
 

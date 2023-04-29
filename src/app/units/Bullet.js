@@ -1,6 +1,6 @@
 import {Unit} from "./Unit.js";
 
-export default class Bullet extends Unit {
+export class Bullet extends Unit {
 
     update(view) {
         this.y -= this.speed

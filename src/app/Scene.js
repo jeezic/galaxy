@@ -1,6 +1,6 @@
-import Player from './units/Player.js'
+import {Player} from './units/Player.js'
 import {Enemy} from './units/Enemy.js'
-import Bullet from "./units/Bullet.js";
+import {Bullet} from "./units/Bullet.js";
 
 export class Scene {
 
