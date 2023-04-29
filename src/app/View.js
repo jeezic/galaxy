@@ -10,6 +10,7 @@ export class View {
         this.canvas.height = this.height;
         this.context.textBaseline = 'top';
         this.context.font='20px Arial';
+        // this.context
     }
 
     rect(x, y, w, h, clr) {
@@ -22,32 +23,26 @@ export class View {
         this.context.fillText(text, x, y);
     }
 
-    async init() {
-        await this.sprite.load()
+    init() {
+        this.sprite.load()
     }
 
     update(scene) {
 
         this.context.clearRect(0, 0, this.width, this.height);
+
         for (let i = scene.enemies.length - 1; i >= 0; i--) {
-            scene.enemies[i].render(this);
+            scene.enemies[i].update(this);
         }
-
-
         for (let i = scene.bullets.length - 1; i >= 0; i--) {
-            scene.bullets[i].render(this);
+            scene.bullets[i].update(this);
         }
+
+        scene.player1.update(this)
 
         this.text((this.width/2-this.width/10),5,'#7aef63', 'Игровой счет:'+scene.score)
 
-        this.renderPlayer1(scene.player1)
-
     }
-
-    renderPlayer1(player1){
-        player1.render(this)
-    }
-
 
 
 }
